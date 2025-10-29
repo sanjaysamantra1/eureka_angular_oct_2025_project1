@@ -5,6 +5,7 @@ import { Carousel } from './components/carousel/carousel';
 import { Body } from './components/body/body';
 import { Footer } from './components/footer/footer';
 
+
 @Component({
   selector: 'app-root',
   imports: [

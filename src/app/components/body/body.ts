@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
+import { TopDeals } from '../top-deals/top-deals';
 
 @Component({
   selector: 'app-body',
-  imports: [],
+  imports: [
+    TopDeals
+  ],
   templateUrl: './body.html',
   styleUrl: './body.css',
 })
