@@ -1,0 +1,76 @@
+<h3 class="text-center">Let's Learn Angular Databinding</h3>
+
+<div class="border border-2 rounded-2 p-2 m-2">
+  <div>Name is:: {{ myName }}</div>
+  <div>Name is:: <span [innerText]="myName"></span></div>
+
+  <img src="{{ img_url }}" alt="" />
+  <img [src]="img_url" alt="" />
+  <img bind-src="img_url" alt="" />
+
+  <div>
+    <input type="text" value="Virat Kohli" />
+    1 way: <input type="text" value="{{ myName }}" class="mx-2" /> 1 way:
+    <input type="text" [value]="myName" class="mx-2" /> 1 way:
+    <input type="text" bind-value="myName" class="mx-2" />
+    <div class="m-2">2 way: <input type="text" [(ngModel)]="myName" class="mx-2" /></div>
+  </div>
+
+  <div class="mt-1">
+    <button class="btn btn-primary" disabled="true">Click Me</button>
+    <button class="btn btn-primary mx-2" disabled="{{ flag }}">Click Me</button>
+    <button class="btn btn-primary mx-2" [disabled]="flag">Click Me</button>
+    <button class="btn btn-primary mx-2" bind-disabled="flag">Click Me</button>
+
+    <button class="btn btn-primary" (click)="toggleFlag()">Toggle Flag</button>
+    <button class="btn btn-primary mx-2" on-click="toggleFlag()">Toggle Flag</button>
+  </div>
+</div>
+
+<div class="border border-2 rounded-2 p-2 m-2">
+  <h3>Attribute Binding</h3>
+  <table class="table table-bordered">
+    <tbody>
+      <tr>
+        <th>Name</th>
+        <th [attr.colspan]="col_span_value">Contact Information</th>
+      </tr>
+      <tr>
+        <td>John Doe</td>
+        <td>john.doe@example.com</td>
+        <td>123-456-7890</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="table table-bordered">
+    <tbody>
+      <tr>
+        <th>Name</th>
+        <th [colSpan]="col_span_value">Contact Information</th>
+      </tr>
+      <tr>
+        <td>John Doe</td>
+        <td>john.doe@example.com</td>
+        <td>123-456-7890</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="border border-2 rounded-2 p-2 m-2">
+  <h4>Add 2 numbers using 2-way binding</h4>
+
+  <input type="number" [(ngModel)]="num1" />
+  <input type="number" [(ngModel)]="num2" class="mx-2" />
+  <div>Addition of {{ num1 }} & {{ num2 }} is:: {{ num1 + num2 }}</div>
+</div>
+
+<div class="border border-2 rounded-2 p-2 m-2">
+  <h4>Add 2 numbers using Template reference</h4>
+
+  <input type="number" #n1 />
+  <input type="number" ref-n2 class="mx-2" />
+  <button class="btn btn-primary" (click)="addition(n1.value, n2.value)">Add</button>
+  <div>Addition result is:: {{ addResult }}</div>
+</div>
