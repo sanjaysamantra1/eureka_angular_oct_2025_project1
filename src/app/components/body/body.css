@@ -1,3 +1,7 @@
-.body{
+.body {
   min-height: 350px;
+}
+
+input {
+  border: 2px solid blue;
 }

@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
   ],
   templateUrl: './databinding.html',
   styleUrl: './databinding.css',
+  // styles: ['h3 { color:purple; }']
 })
 export class Databinding {
   myName: string = 'Virat Kohli';
