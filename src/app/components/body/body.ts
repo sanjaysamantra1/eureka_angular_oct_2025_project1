@@ -7,6 +7,7 @@ import { Products } from '../products/products';
 import { UserList } from '../user-list/user-list';
 import { Demo1 } from '../demo1/demo1';
 import { EmployeeCrud } from '../employee-crud/employee-crud';
+import { PipesDemo } from '../pipes-demo/pipes-demo';
 
 @Component({
   selector: 'app-body',
@@ -18,7 +19,8 @@ import { EmployeeCrud } from '../employee-crud/employee-crud';
     // MyModal
     // UserList
     // Demo1
-    EmployeeCrud
+    // EmployeeCrud
+    PipesDemo
   ],
   templateUrl: './body.html',
   styleUrl: './body.css',
