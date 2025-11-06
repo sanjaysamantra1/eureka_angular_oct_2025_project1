@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
 import products from './products_data';
 import { FormsModule } from '@angular/forms';
+import { Textonly } from '../../custom_directives/textonly';
+import { Zoomin } from '../../custom_directives/zoomin';
 
 @Component({
   selector: 'app-products',
   imports: [
-    FormsModule
+    FormsModule,
+    Textonly,
+    Zoomin
   ],
   templateUrl: './products.html',
   styleUrl: './products.css',

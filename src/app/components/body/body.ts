@@ -13,10 +13,10 @@ import { Demo1 } from '../demo1/demo1';
     // TopDeals,
     // Databinding,
     // Directives
-    // Products
+    Products
     // MyModal
     // UserList
-    Demo1
+    // Demo1
   ],
   templateUrl: './body.html',
   styleUrl: './body.css',
