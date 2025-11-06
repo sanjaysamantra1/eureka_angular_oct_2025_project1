@@ -1,0 +1,65 @@
+<h3 class="text-center">Employee CRUD Example</h3>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>eId</th>
+            <th>Name</th>
+            <th>Salary</th>
+            <th>Gender</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (employee of employeeArr; track $index) {
+          <tr>
+            <td>{{ employee.eId }}</td>
+            <td>{{ employee.name }}</td>
+            <td>{{ employee.sal }}</td>
+            <td>{{ employee.gender }}</td>
+            <td>
+                <fa-icon [icon]="faTrash" class="mx-3" (click)="deleteEmployee(employee.eId)"></fa-icon>
+                <fa-icon [icon]="faEye" (click)="viewEmployee(employee)" data-bs-toggle="modal" data-bs-target="#staticBackdrop"></fa-icon>
+            </td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+    <div class="col-sm-4">
+      <div class="border border-2 rounded-2 p-2">
+        <div>Eid: <input [(ngModel)]="newEmp.eId"></div>
+        <div class="my-2">Name: <input [(ngModel)]="newEmp.name"></div>
+        <div class="my-2">Gender: <input [(ngModel)]="newEmp.gender"></div>
+        <div>Salary: <input [(ngModel)]="newEmp.sal"></div>
+
+        <button class="btn btn-primary mx-5 my-3" (click)="addEmployee()">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Employee Details</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div>EmpID : {{selectedEmployee.eId}}</div>
+        <div>Name : {{selectedEmployee.name}}</div>
+        <div>gender : {{selectedEmployee.gender}}</div>
+        <div>Salary : {{selectedEmployee.sal}}</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>

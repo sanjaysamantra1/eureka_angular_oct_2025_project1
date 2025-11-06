@@ -6,6 +6,7 @@ import { Directives } from '../directives/directives';
 import { Products } from '../products/products';
 import { UserList } from '../user-list/user-list';
 import { Demo1 } from '../demo1/demo1';
+import { EmployeeCrud } from '../employee-crud/employee-crud';
 
 @Component({
   selector: 'app-body',
@@ -13,10 +14,11 @@ import { Demo1 } from '../demo1/demo1';
     // TopDeals,
     // Databinding,
     // Directives
-    Products
+    // Products
     // MyModal
     // UserList
     // Demo1
+    EmployeeCrud
   ],
   templateUrl: './body.html',
   styleUrl: './body.css',
