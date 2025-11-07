@@ -2,7 +2,9 @@
 
 <div class="border border-2 rounded-2 p-2 m-2">
   <div>lets see lowercase,uppercase,titlecase pipes</div>
-  <div>Name is:: {{ myName }}</div>
+  <div>
+    Name is:: {{ myName }} <span><input [(ngModel)]="myName" /></span>
+  </div>
   <div>Name in uppercase:: {{ myName | uppercase }}</div>
   <div>Name in lowercase:: {{ myName | lowercase }}</div>
   <div>Name in titlecase:: {{ myName | titlecase }}</div>
@@ -57,7 +59,7 @@
 <div class="border border-2 rounded-2 p-2 m-2">
   <div>keyvalue pipes:</div>
   @for(entry of user | keyvalue;track $index){
-    <div>{{ entry.key }}---{{ entry.value }}</div>
+  <div>{{ entry.key }}---{{ entry.value }}</div>
   }
 </div>
 
@@ -71,5 +73,16 @@
 <div class="border border-2 rounded-2 p-2 m-2">
   <div>Custom Pipe(Ordinal)</div>
   <div>Input:: <input [(ngModel)]="num" type="number" /></div>
-  <div>Output:: {{num | ordinal}}</div>
+  <div>Output:: {{ num | ordinal }}</div>
+</div>
+
+<div class="border border-2 rounded-2 p-2 m-2">
+  <div>Pure vs Impure Pipe</div>
+  @for(ele of numArray|mysort;track $index){
+  <span>{{ ele }}, &nbsp;</span>
+  }
+  <div>
+    <input #newNum class="mx-1" />
+    <button class="btn btn-primary" (click)="numArray.push(+newNum.value)">Add</button>
+  </div>
 </div>
