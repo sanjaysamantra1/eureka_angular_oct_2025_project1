@@ -8,6 +8,7 @@ import { UserList } from '../user-list/user-list';
 import { Demo1 } from '../demo1/demo1';
 import { EmployeeCrud } from '../employee-crud/employee-crud';
 import { PipesDemo } from '../pipes-demo/pipes-demo';
+import { ParentDemo } from '../parent-demo/parent-demo';
 
 @Component({
   selector: 'app-body',
@@ -20,7 +21,8 @@ import { PipesDemo } from '../pipes-demo/pipes-demo';
     // UserList
     // Demo1
     // EmployeeCrud
-    PipesDemo
+    // PipesDemo
+    ParentDemo
   ],
   templateUrl: './body.html',
   styleUrl: './body.css',
