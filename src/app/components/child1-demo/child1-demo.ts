@@ -5,9 +5,19 @@ import { Component } from '@angular/core';
   imports: [],
   templateUrl: './child1-demo.html',
   styleUrl: './child1-demo.css',
-  inputs:['a','b']
+  inputs: ['a', 'b']
 })
 export class Child1Demo {
-  a:any;
-  b:any;
+  a: any;
+  b: any;
+
+  constructor() { // 1
+    console.log("Child-1 constructor");
+  }
+  ngOnChanges(myChanges: any) { // N
+    console.log('Child-1 ngOnChanges: ', myChanges);
+  }
+  ngOnInit() { // 1
+    console.log('Child-1 ngOnInit');
+  }
 }
