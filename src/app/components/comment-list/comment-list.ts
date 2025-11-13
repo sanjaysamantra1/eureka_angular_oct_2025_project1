@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { CommentService } from '../../services/comment-service';
+import { Comment } from '../../models/comment';
 
 @Component({
   selector: 'app-comment-list',
@@ -9,9 +11,9 @@ import { Component } from '@angular/core';
 })
 export class CommentList {
   comments_url = 'https://jsonplaceholder.typicode.com/comments';
-  commentArr: any = [];
+  commentArr: Comment[] = [];
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private commentService: CommentService) {
   }
 
   ngOnInit() {
@@ -19,7 +21,7 @@ export class CommentList {
     // this.fetchData_Angular();
   }
   fetchData_Angular() {
-    this.httpClient.get(this.comments_url).subscribe((response: any) => {
+    this.commentService.getAllComments().subscribe((response: Comment[]) => {
       this.commentArr = response;
     });
   }
