@@ -10,6 +10,7 @@ import { EmployeeCrud } from '../employee-crud/employee-crud';
 import { PipesDemo } from '../pipes-demo/pipes-demo';
 import { ParentDemo } from '../parent-demo/parent-demo';
 import { ProductTable } from '../product-table/product-table';
+import { CommentList } from '../comment-list/comment-list';
 
 @Component({
   selector: 'app-body',
@@ -17,14 +18,15 @@ import { ProductTable } from '../product-table/product-table';
     // TopDeals,
     // Databinding,
     // Directives
-    Products,
-    ProductTable
+    // Products,
+    // ProductTable
     // MyModal
     // UserList
     // Demo1
     // EmployeeCrud
     // PipesDemo
     // ParentDemo
+    CommentList
   ],
   templateUrl: './body.html',
   styleUrl: './body.css',
