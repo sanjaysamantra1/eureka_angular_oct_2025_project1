@@ -11,6 +11,7 @@ import { PipesDemo } from '../pipes-demo/pipes-demo';
 import { ParentDemo } from '../parent-demo/parent-demo';
 import { ProductTable } from '../product-table/product-table';
 import { CommentList } from '../comment-list/comment-list';
+import { EmployeeList } from '../employee-list/employee-list';
 
 @Component({
   selector: 'app-body',
@@ -26,7 +27,8 @@ import { CommentList } from '../comment-list/comment-list';
     // EmployeeCrud
     // PipesDemo
     // ParentDemo
-    CommentList
+    // CommentList
+    EmployeeList
   ],
   templateUrl: './body.html',
   styleUrl: './body.css',
