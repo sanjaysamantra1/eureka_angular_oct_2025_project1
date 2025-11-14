@@ -12,6 +12,7 @@ import { ParentDemo } from '../parent-demo/parent-demo';
 import { ProductTable } from '../product-table/product-table';
 import { CommentList } from '../comment-list/comment-list';
 import { EmployeeList } from '../employee-list/employee-list';
+import { ObservableDemo1 } from '../observable-demo1/observable-demo1';
 
 @Component({
   selector: 'app-body',
@@ -28,7 +29,8 @@ import { EmployeeList } from '../employee-list/employee-list';
     // PipesDemo
     // ParentDemo
     // CommentList
-    EmployeeList
+    // EmployeeList
+    ObservableDemo1
   ],
   templateUrl: './body.html',
   styleUrl: './body.css',
