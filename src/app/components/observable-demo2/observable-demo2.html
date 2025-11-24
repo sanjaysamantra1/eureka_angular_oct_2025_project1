@@ -1,0 +1,36 @@
+<h3 class="text-center">Let's Learn Important RXJS Operators</h3>
+
+<div class="border border-3 p-3 m-3 rounded-3">
+  <h4>
+    Forkjoin : Allows to run multiple API calls in parallel and get the response once all complete.
+  </h4>
+
+  <table class="table table-bordered table-striped">
+    <tbody>
+      @for (user of users; track $index) {
+      <tr>
+        <td>{{ user.id }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.phone }}</td>
+        <td>{{ user.address.city }}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>
+
+<div class="border border-3 p-3 m-3 rounded-3">
+  <h4>
+    MergeMap : receive data from an observable (outer observable). For each of those values, we want
+    to call another observable (inner observable) to get more data.
+  </h4>
+</div>
+
+<div class="border border-3 p-3 m-3 rounded-3">
+  <h4>
+    exhaustmap : Map to inner observable, ignore other values until that observable completes.
+  </h4>
+  <button class="btn btn-danger" #loginBtn>Login</button>
+</div>
