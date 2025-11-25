@@ -3,6 +3,7 @@ import products from './products_data';
 import { FormsModule } from '@angular/forms';
 import { Textonly } from '../../custom_directives/textonly';
 import { Zoomin } from '../../custom_directives/zoomin';
+import { CartService } from '../../services/cart-service';
 
 @Component({
   selector: 'app-products',
@@ -19,7 +20,7 @@ export class Products {
   categoryArr: string[] = [];
   selectedCategory: string = 'all';
 
-  constructor() {
+  constructor(private cartService: CartService) {
     this.categoryArr = products.map(prod => prod.category); // duplicate categories
     this.categoryArr = ['all', ...new Set(this.categoryArr)]; // unique categories
   }
@@ -29,5 +30,9 @@ export class Products {
     } else {
       this.filteredProducts = products.filter(product => product.category === this.selectedCategory);
     }
+  }
+
+  addToCart(product: any) {
+    this.cartService.addItem(product);
   }
 }

@@ -73,9 +73,12 @@ export class ObservableDemo2 {
         console.log(response);
       });
     }); */
+    fromEvent(this.loginBtn.nativeElement, 'click').subscribe(val => {
+      console.log('Button Clicked...')
+    });
 
     fromEvent(this.loginBtn.nativeElement, 'click').pipe(exhaustMap((val) => {
-      return this.httpClient.get('https://jsonplaceholder.typicode.com/users')
+      return this.httpClient.get('https://en.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&titles=India')
     })).subscribe({
       next: (res) => console.log('Response:', res),
       error: (err) => console.error('Error:', err),
