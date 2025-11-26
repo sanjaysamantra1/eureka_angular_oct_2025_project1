@@ -1,0 +1,33 @@
+<h3 class="text-center">Let's Learn Pre-defined classes Provided by Angular</h3>
+
+<form name="myForm" class="border border-3 rounded-3 p-3 m-3">
+  Name:
+  <input name="userName" [(ngModel)]="name" required /><br /><br />
+  Age:
+  <input name="userAge" [(ngModel)]="age" />
+</form>
+
+<style>
+  input.ng-valid {
+    border: 5px solid green;
+  }
+  input.ng-invalid {
+    border: 5px solid red;
+  }
+</style>
+
+<div class="border border-2 rounded-2 m-2 p-2">
+  <pre>
+        Classes:
+        -------
+        ng-pristine : No user interaction occured/not yet modified
+        ng-dirty : User interaction occured/modified
+
+        ng-invalid : One of the Validation is not meeting
+        ng-valid : It meets all the validation
+
+        ng-untouched: not yet touched
+        ng-touched: already touched (blur)
+    </pre
+  >
+</div>

@@ -1,0 +1,27 @@
+<h3 class="text-center">Let's Learn Effects</h3>
+
+<div class="border border-2 rounded-2 p-2 m-2">
+  <h4>An effect is an operation that runs/executes whenever the signals that it reads changes.</h4>
+</div>
+
+<div class="col-sm-4 offset-4">
+    <div>
+        Click this button to increse UserId -- {{userId()}}
+        <button class="btn btn-primary" (click)="incrementUserId()">Increment</button>
+        <button class="btn btn-danger" (click)="destroyEffect()">Destroy Effect</button>
+    </div>
+
+  <div class="card">
+    <div class="card-body text-center">
+      <h5 class="card-title">{{ userData.username }}</h5>
+      <p class="card-text">{{ userData.name }}</p>
+      <p class="card-text">
+        {{ userData.email }}
+      </p>
+      <p class="card-text">
+        {{ userData.phone }}
+      </p>
+      <p class="card-text">{{ userData.address.city }}</p>
+    </div>
+  </div>
+</div>

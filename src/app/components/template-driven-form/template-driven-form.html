@@ -1,0 +1,45 @@
+<h3 class="text-center">Template Driven Form</h3>
+
+<div class="col-sm-6 offset-3 border border-3 rounded-3 p-3">
+  <form #signupForm="ngForm" (submit)="submitForm(signupForm)">
+    <p>
+      FirstName:
+      <input name="firstName" #firstName="ngModel" ngModel required minlength="5" />  
+      @if(firstName.hasError('required') && firstName.dirty){
+        <span class="text-danger mx-2">FirstName is Required</span>
+      }
+      @if(firstName.hasError('minlength') && firstName.dirty){
+        <span class="text-danger mx-2">FirstName Should have minimum 5 chars</span>
+      }
+    </p>
+    <p>
+      LastName:
+      <input name="lastName" ngModel />
+    </p>
+    <p>
+      Email:
+      <input name="email" ngModel />
+    </p>
+    <div ngModelGroup="address">
+      <p>
+        City:
+        <input name="city" ngModel />
+      </p>
+      <p>
+        State:
+        <input name="state" ngModel />
+      </p>
+      <p>
+        Pincode:
+        <input name="pincode" ngModel />
+      </p>
+    </div>
+
+    <input type="reset" value="Clear" class="btn btn-danger ml-5" />
+    <input type="submit" value="Submit" [disabled]="signupForm.invalid" class="btn btn-primary mx-2"/>
+  </form>
+  <hr>
+  <pre>
+    {{signupForm.value | json}}
+  </pre>
+</div>
