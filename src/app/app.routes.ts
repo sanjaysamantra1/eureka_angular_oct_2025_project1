@@ -6,14 +6,40 @@ import { Contactus } from './components/contactus/contactus';
 import { Notfound } from './components/notfound/notfound';
 import { UserList } from './components/user-list/user-list';
 import { UserDetails } from './components/user-details/user-details';
+import { Products } from './components/products/products';
+import { ProductDetails } from './components/product-details/product-details';
+import { PermanentJobs } from './components/permanent-jobs/permanent-jobs';
+import { ContractJobs } from './components/contract-jobs/contract-jobs';
+import { UploadVideos } from './components/upload-videos/upload-videos';
+import { authGuard } from './guards/auth-guard';
+import { canExitGuard } from './guards/can-exit-guard';
 
 export const routes: Routes = [
     { path: 'home', component: Home },
     { path: 'about', component: Aboutus },
-    { path: 'careers', component: Careers },
-    { path: 'contactus', component: Contactus },
+    {
+        path: 'careers',
+        component: Careers,
+        children: [
+            { path: '', component: PermanentJobs },
+            { path: 'permanent', component: PermanentJobs },
+            { path: 'contract', component: ContractJobs },
+        ]
+    },
+    {
+        path: 'contactus',
+        component: Contactus,
+        canDeactivate: [canExitGuard]
+    },
     { path: 'users', component: UserList },
     { path: 'user-details/:id', component: UserDetails },
+    { path: 'products', component: Products },
+    { path: 'product-details', component: ProductDetails },
+    {
+        path: 'upload-videos',
+        component: UploadVideos,
+        canActivate: [authGuard]
+    },
     { path: '', component: Home },
     { path: '**', component: Notfound },
 ];

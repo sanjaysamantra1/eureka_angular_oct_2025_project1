@@ -4,10 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { Textonly } from '../../custom_directives/textonly';
 import { Zoomin } from '../../custom_directives/zoomin';
 import { CartService } from '../../services/cart-service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-products',
   imports: [
+    RouterLink,
     FormsModule,
     Textonly,
     Zoomin
