@@ -1,2 +1,8 @@
 <h2 class="text-center">This is Home Component</h2>
-<hr/>
+<hr />
+
+@defer {
+    <ng-container *ngComponentOutlet="largeComponent"></ng-container>
+} @placeholder (minimum 500ms) {
+    <p>Plz Wait!!! YOu Component is Being Prepared....</p>
+}

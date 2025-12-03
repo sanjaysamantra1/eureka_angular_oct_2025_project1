@@ -48,7 +48,7 @@ import { RouterOutlet } from '@angular/router';
     // EffectDemo
     // FormDemo1
     // TemplateDrivenForm
-    // ModelDrivenForm
+    // ModelDrivenForm,
     // DynamicForm,
     RouterOutlet
 ],
